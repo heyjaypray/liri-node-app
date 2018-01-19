@@ -12,10 +12,10 @@ var arg_2 = process.argv[3];
 function getTweets() {
 
     var client = new Twitter({
-		consumer_key: "pSVeyFaVhRUhX864evqgno8PW",
-		consumer_secret: "wYXVJ6DPk6eir0mcuBLYKBa8QBAamMV2fkwZjA7Z5gIK6SgfXH",
-		access_token_key: "953780510215438336-XRPhelKwlsdJAX1sRjO0MroIUW6yB67",
-		access_token_secret: "cexxkKZKgj9yM6forGBKzbC8QORNWcurV4ZBnLGyBNyXB"
+		consumer_key: keys.twitterKeys.consumer_key,
+		consumer_secret: keys.twitterKeys.consumer_secret,
+		access_token_key: keys.twitterKeys.access_token_key,
+		access_token_secret: keys.twitterKeys.access_token_secret
 	});
 
     var params = {screen_name: 'GGGGGGGeeUnit'};
