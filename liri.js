@@ -11,12 +11,7 @@ var arg_2 = process.argv[3];
 
 function getTweets() {
 
-    var client = new Twitter({
-		consumer_key: keys.twitterKeys.consumer_key,
-		consumer_secret: keys.twitterKeys.consumer_secret,
-		access_token_key: keys.twitterKeys.access_token_key,
-		access_token_secret: keys.twitterKeys.access_token_secret
-	});
+    var client = new Twitter(keys.twitterKeys);
 
     var params = {screen_name: 'GGGGGGGeeUnit'};
         client.get('statuses/user_timeline', params, function(error, tweets, response) {
@@ -42,10 +37,7 @@ function getTweets() {
 }
 
 function getSong() {
-    var spotify = new Spotify({
-        id: "4488f7cdeafa48d78c518eb0267f61f5",
-		secret: "1700962b608d4d18a1789e97f552434c"
-        });
+    var spotify = new Spotify(keys.spotifyKeys);
 
         spotify.search({ type: 'track', query: arg_2 }, function(err, data) {
             if (err) {
